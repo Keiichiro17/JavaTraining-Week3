@@ -7,10 +7,10 @@ class TaskManager{
     Tasks.add(task);
   }
   void showTasks(){
-    if(books.size()==0){
+    if(tasks.size()==0){
       System.out.println("現在登録されているTaskはありません。");
         }else{
-      for(int i=0;i<books.size();i++){
+      for(int i=0;i<tasks.size();i++){
         Task t=tasks.get(i);
         System.out.println((i+1)+":"+t.title+"/"+t.completed state+"/"+t.deadline);
       }
@@ -28,4 +28,6 @@ class TaskManager{
   int size(){
     return tasks.size();
   }
+  tasks.forEach(t->
+  System.out.println(t));
   }
