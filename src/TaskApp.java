@@ -25,7 +25,7 @@ class TaskApp{
 
       if(choice==1){
         String title;
-        while(true)
+        while(true){
         System.out.print("タイトル: ");
         title=sc.nextLine().trim();
         if(!title.isEmpty()) break;
@@ -45,18 +45,18 @@ class TaskApp{
       }
       
 
-        Task task=new task(title,boolean completed,deadline);
-        TaskManager.addTask(task);
+        Task task=new task(title,false,deadline);
+        taskmanager.addTask(task);
         System.out.println("登録しました。");
         
       }else if (choice==2){
-      TaskManager.showTasks();
+      taskmanager.showTasks();
         
       }else if(choice==3){
         System.out.print("削除する番号: ");
         try{
-          intnum=Integer.parselnt(sc.nextline());
-          if(!TaskManager.removeTask(num)){
+          int num=Integer.parseInt(sc.nextLine());
+          if(!taskmanager.removeTask(num)){
             System.out.println("削除できませんでした");
           }
         }catch(NumberFormatException e){
@@ -66,8 +66,8 @@ class TaskApp{
     }else if(choice==4){
       System.out.print("完了にする番号:");
       try{
-        int num=integer.parselnt(sc.nextLine());
-        if(!TaskManager.completeTask(num)){
+        int num=Integer.parseInt(sc.nextLine());
+        if(!taskmanager.completeTask(num)){
           System.out.println("もう一度入力してください")
             }else{
          System.out.println("完了にしました。");
@@ -78,7 +78,7 @@ class TaskApp{
       
       }else if (choice==0){
       
-      System.out.println("登録件数:"+TaskManager.size());
+      System.out.println("登録件数:"+taskmanager.size());
       break;
 
     }else{
