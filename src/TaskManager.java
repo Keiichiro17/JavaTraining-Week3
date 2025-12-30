@@ -12,7 +12,7 @@ class TaskManager{
         }else{
       for(int i=0;i<tasks.size();i++){
         Task t=tasks.get(i);
-        System.out.println((i+1)+":"+t.title+"/"+t.completed state+"/"+t.deadline);
+        System.out.println((i+1)+":"+t.title+"/"+t.completed+"/"+t.deadline);
       }
     }
   }
@@ -21,7 +21,7 @@ class TaskManager{
     if(number<1||number>tasks.size()){
     return false;
   }
- tasks.get(index)completed=true;
+ tasks.remove(index);
     return true;
   }
   int size(){
