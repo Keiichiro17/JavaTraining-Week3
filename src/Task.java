@@ -1,11 +1,16 @@
+import java.time.LocalDate;
+
 class Task{
   String title;
-  String completed state;
-  int deadline;
+  boolean completed;
+  Localdate deadline;
 
-  Task(String title, String completed state, int deadline){
+  Task(String title, boolean completed, LocalDate deadline){
 this.title=title;
-this.completed state =completed state ;
+this.completed=completed;
 this.deadline=deadline;
   }
+String statusLabel(){
+  return completed ? "[✓完了]"
+    }
 }
