@@ -9,7 +9,7 @@ class TaskManager{
   }
 
   void showTasks(){
-    if(tasks.size()==0){
+    if(tasks.size() == 0){
       System.out.println("現在登録されているTaskはありません。");
     }else{
       AtomicInteger i = new AtomicInteger(1);
@@ -20,19 +20,19 @@ class TaskManager{
   }
 
   boolean removeTask(int number){
-    int index = number - 1;
     if(number < 1 || number > tasks.size()){
       return false;
     }
+    int index = number - 1;
     tasks.remove(index);
     return true;
   }
 
   boolean completeTask(int number){
-    int index = number - 1;
     if(number < 1 || number > tasks.size()){
       return false;
     }
+    int index = number - 1;
     tasks.get(index).completed = true;
     return true;
   }
