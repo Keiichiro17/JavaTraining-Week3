@@ -29,7 +29,7 @@ class TaskApp{
         System.out.print("タイトル: ");
         title=sc.nextLine().trim();
         if(!title.isEmpty()) break;
-         System.out.println("タイトルは空にできません。");
+         System.out.println("もう一度入力してください");
         }
 
       LocalDate deadline;
