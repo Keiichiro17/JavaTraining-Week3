@@ -3,7 +3,7 @@ import java.time.LocalDate;
 class Task{
   String title;
   boolean completed;
-  Localdate deadline;
+  LocalDate deadline;
 
   Task(String title, boolean completed, LocalDate deadline){
 this.title=title;
