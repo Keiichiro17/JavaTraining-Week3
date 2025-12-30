@@ -7,10 +7,10 @@ class LibraryApp{
     TaskManager taskmanager=new taskmanager();
 
     while(true){
-      System.out.println("図書管理システム");
-      System.out.println("1:書籍を登録する");
-      System.out.println("2:登録済みの書籍を一覧表示する");
-      System.out.println("3:書籍を削除する");
+      System.out.println("タスク管理システム");
+      System.out.println("1:タスクを登録する");
+      System.out.println("2:タスクを一覧表示する");
+      System.out.println("3:タスクを削除する");
       System.out.println("0:終了");
 
       int choice=sc.nextInt();
