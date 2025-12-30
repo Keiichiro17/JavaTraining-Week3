@@ -21,35 +21,35 @@ class LibraryApp{
         System.out.print("タイトル: ");
         String title=sc.nextLine();
 
-        System.out.print("著者: ");
-        String author=sc.nextLine();
+        System.out.print("完了状態: ");
+        String deadline=sc.nextLine();
 
-        System.out.print("出版年: ");
-        int year=sc.nextInt();
+        System.out.print(締切日: ");
+        int deadline=sc.nextInt();
         sc.nextLine();
 
-        Book book=new Book(title,author,year);
-        library.addBook(book);
+        Task task=new task(title,author,year);
+        TaskManager.addTask(task);
         System.out.println("登録しました。");
         
       }else if (choice==2){
-      library.showBooks();
+      library.showTasks();
         
       }else if(choice==3){
         System.out.print("削除する番号: ");
         int num =sc.nextInt();
         sc.nextLine();
 
-        if(!library.removeBook(num)){
+        if(!library.removeTask(num)){
           System.out.println("削除できませんでした");
         }
 
       }else if (choice==0){
-        System.out.println("終了");
+        System.out.println("登録件数:");
         break;
         
       }else{
-      System.out.println("0~3を入力してください");
+      System.out.println("0~4を入力してください");
       }
     }
     sc.close();
