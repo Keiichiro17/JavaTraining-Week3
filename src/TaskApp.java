@@ -1,11 +1,12 @@
-import java.util.Scanner;
-import java.time.LocalDate;
+import java.util.Scanner;//キーボード入力を受け取る
+import java.time.LocalDate;//締切日
 
 class TaskApp {
   public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    TaskManager taskmanager = new TaskManager();
+    Scanner sc = new Scanner(System.in);//キーボード入力を受け付ける
+    TaskManager taskmanager = new TaskManager();//タスクの追加/一覧/削除/完了などを管理
 
+    //メニューを何度も表示して、0が選ばれるまで繰り返す
     while (true) {
       System.out.println("タスク管理システム");
       System.out.println("1:タスクを登録する");
@@ -37,7 +38,7 @@ class TaskApp {
           System.out.print("締切日(例: 2026-12-30): ");
           String s = sc.nextLine().trim();
           try {
-            deadline = LocalDate.parse(s); // ← ISO形式(yyyy-MM-dd)のみOK
+            deadline = LocalDate.parse(s); // 
             break;
           } catch (Exception e) {
             System.out.println("もう一度入力してください");
