@@ -13,6 +13,10 @@ class TaskApp{
       System.out.println("3:タスクを削除する");
       System.out.println("4:タスクを完了する");
       System.out.print("0:終了");
+      
+      System.out.print("選択: ");
+      int choice = sc.nextInt();
+      sc.nextLine();
 
       int choice;
       try{
