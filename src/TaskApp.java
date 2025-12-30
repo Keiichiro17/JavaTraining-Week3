@@ -45,7 +45,7 @@ class TaskApp{
       }
       
 
-        Task task=new task(title,false,deadline);
+        Task task=new Task(title,false,deadline);
         taskmanager.addTask(task);
         System.out.println("登録しました。");
         
@@ -68,12 +68,12 @@ class TaskApp{
       try{
         int num=Integer.parseInt(sc.nextLine());
         if(!taskmanager.completeTask(num)){
-          System.out.println("もう一度入力してください")
+          System.out.println("もう一度入力してください");
             }else{
          System.out.println("完了にしました。");
           }
       }catch(NumberFormatException e){
-        System.out.println("もう一度入力してください")
+        System.out.println("もう一度入力してください");
           }
       
       }else if (choice==0){
