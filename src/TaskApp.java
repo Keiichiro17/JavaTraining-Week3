@@ -4,7 +4,7 @@ import java.time.LocalDate;
 class TaskApp{
   public static void main(String[]args){
     Scanner sc=new Scanner(System.in);
-    TaskManager taskmanager=new Taskmanager();
+    TaskManager taskmanager=new TaskManager();
 
     while(true){
       System.out.println("タスク管理システム");
