@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 class TaskManager{
-  ArrayList <Task> Tasks = new ArrayList<>();
+  ArrayList <Task> tasks = new ArrayList<>();
   
   void addTask(Task task){
-    Tasks.add(task);
+    tasks.add(task);
   }
   void showTasks(){
     if(tasks.size()==0){
@@ -16,18 +16,15 @@ class TaskManager{
       }
     }
   }
-  boolean removetasks(int number){
+  boolean removeTask(int number){
     int index=number-1;
-    
     if(number<1||number>tasks.size()){
     return false;
   }
-  tasks.remove(index);
-  return true;
+ tasks.get(index)completed=true;
+    return true;
   }
   int size(){
     return tasks.size();
   }
-  tasks.forEach(t->
-  System.out.println(t));
-  }
+}
