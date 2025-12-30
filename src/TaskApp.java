@@ -21,9 +21,10 @@ class TaskApp {
         choice = Integer.parseInt(sc.nextLine().trim());
       } catch (NumberFormatException e) {
         System.out.println("もう一度入力してください");
-        continue;
+        continue;//メニューを出しなおす
       }
-
+      
+      //タイトルを登録
       if (choice == 1) {
         String title;
         while (true) {
@@ -32,7 +33,8 @@ class TaskApp {
           if (!title.isEmpty()) break;
           System.out.println("もう一度入力してください");
         }
-
+        
+        //締切日を登録
         LocalDate deadline;
         while (true) {
           System.out.print("締切日(例: 2026-12-30): ");
@@ -48,10 +50,12 @@ class TaskApp {
         Task task = new Task(title, false, deadline);
         taskmanager.addTask(task);
         System.out.println("登録しました。");
-
+        
+        //2:一覧表示
       } else if (choice == 2) {
         taskmanager.showTasks();
-
+        
+        //3:削除
       } else if (choice == 3) {
         System.out.print("削除する番号: ");
         try {
@@ -62,7 +66,8 @@ class TaskApp {
         } catch (NumberFormatException e) {
           System.out.println("もう一度入力してください");
         }
-
+        
+        //4:完了
       } else if (choice == 4) {
         System.out.print("完了にする番号: ");
         try {
@@ -76,8 +81,9 @@ class TaskApp {
           System.out.println("もう一度入力してください");
         }
 
+        //0:終了
       } else if (choice == 0) {
-        System.out.println("登録件数:" + taskmanager.size());
+        System.out.println("登録件数:" + taskmanager.size());//現在の登録件数を表示して終了
         break;
 
       } else {
@@ -85,6 +91,6 @@ class TaskApp {
       }
     }
 
-    sc.close();
+    sc.close();//閉じる
   }
 }
