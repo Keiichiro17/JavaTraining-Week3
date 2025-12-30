@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 class TaskManager{
   ArrayList<Task> tasks = new ArrayList<>();
@@ -6,20 +7,17 @@ class TaskManager{
   void addTask(Task task){
     tasks.add(task);
   }
-  
-import java.util.concurrent.atomic.AtomicInteger;
 
-void showTasks(){
-  if(tasks.size()==0){
-    System.out.println("現在登録されているTaskはありません。");
-  }else{
-    AtomicInteger i = new AtomicInteger(1);
-    tasks.forEach(t ->
-      System.out.println(i.getAndIncrement() + ":" + t.title + "/" + t.statusLabel() + "/" + t.deadline)
-    );
+  void showTasks(){
+    if(tasks.size()==0){
+      System.out.println("現在登録されているTaskはありません。");
+    }else{
+      AtomicInteger i = new AtomicInteger(1);
+      tasks.forEach(t ->
+        System.out.println(i.getAndIncrement() + ":" + t.title + "/" + t.statusLabel() + "/" + t.deadline)
+      );
+    }
   }
-}
-  
 
   boolean removeTask(int number){
     int index = number - 1;
