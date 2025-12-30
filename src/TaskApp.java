@@ -11,7 +11,8 @@ class LibraryApp{
       System.out.println("1:タスクを登録する");
       System.out.println("2:タスクを一覧表示する");
       System.out.println("3:タスクを削除する");
-      System.out.println("0:終了");
+      System.out.println("4:タスクを完了する");
+      System.out.print("0:終了");
 
       int choice=sc.nextInt();
       sc.nextLine();
