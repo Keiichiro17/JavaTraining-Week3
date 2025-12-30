@@ -1,4 +1,4 @@
-import java.time.LocalDate;
+import java.time.Localdate;
 
 class Task{
   String title;
@@ -11,6 +11,6 @@ this.completed=completed;
 this.deadline=deadline;
   }
 String statusLabel(){
-  return completed ? "[✓完了]"
+  return completed ? "[✓完了]":"";
     }
 }
