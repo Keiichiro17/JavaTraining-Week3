@@ -6,17 +6,20 @@ class TaskManager{
   void addTask(Task task){
     tasks.add(task);
   }
+  
+import java.util.concurrent.atomic.AtomicInteger;
 
-  void showTasks(){
-    if(tasks.size()==0){
-      System.out.println("現在登録されているTaskはありません。");
-    }else{
-      for(int i=0;i<tasks.size();i++){
-        Task t = tasks.get(i);
-        System.out.println((i+1)+":"+t.title+"/"+ t.statusLabel() +"/"+t.deadline);
-      }
-    }
+void showTasks(){
+  if(tasks.size()==0){
+    System.out.println("現在登録されているTaskはありません。");
+  }else{
+    AtomicInteger i = new AtomicInteger(1);
+    tasks.forEach(t ->
+      System.out.println(i.getAndIncrement() + ":" + t.title + "/" + t.statusLabel() + "/" + t.deadline)
+    );
   }
+}
+  
 
   boolean removeTask(int number){
     int index = number - 1;
