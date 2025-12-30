@@ -29,36 +29,59 @@ class TaskApp{
         System.out.print("タイトル: ");
         title=sc.nextLine().trim();
         if(!title.isEmpty()) break;
-ｍ        System.out.お      
+         System.out.println("タイトルは空にできません。");
+        }
 
-        System.out.print("完了状態: ");
-        String deadline=sc.nextLine();
+      LocalDate deadline;
+      while(true){   
+        System.out.print("締切日: ");
+        String s=sc.nextLine().trim();
+        try{
+          deadline=LocalDate.parse(s);
+          break;
+        }catch(Exception e){
+          System.out.println("もう一度入力してください");
+        }
+      }
+      
 
-        System.out.print(締切日: ");
-        int deadline=sc.nextInt();
-        sc.nextLine();
-
-        Task task=new task(title,author,year);
+        Task task=new task(title,boolean completed,deadline);
         TaskManager.addTask(task);
         System.out.println("登録しました。");
         
       }else if (choice==2){
-      library.showTasks();
+      TaskManager.showTasks();
         
       }else if(choice==3){
         System.out.print("削除する番号: ");
-        int num =sc.nextInt();
-        sc.nextLine();
-
-        if(!library.removeTask(num)){
-          System.out.println("削除できませんでした");
+        try{
+          intnum=Integer.parselnt(sc.nextline());
+          if(!TaskManager.removeTask(num)){
+            System.out.println("削除できませんでした");
+          }
+        }catch(NumberFormatException e){
+          System.out.println("もう一度入力してください");
         }
-
+      
+    }else if(choice==4){
+      System.out.print("完了にする番号:");
+      try{
+        int num=integer.parselnt(sc.nextLine());
+        if(!TaskManager.completeTask(num)){
+          System.out.println("もう一度入力してください")
+            }else{
+         System.out.println("完了にしました。");
+          }
+      }catch(NumberFormatException e){
+        System.out.println("もう一度入力してください")
+          }
+      
       }else if (choice==0){
-        System.out.println("登録件数:");
-        break;
-        
-      }else{
+      
+      System.out.println("登録件数:"+TaskManager.size());
+      break;
+
+    }else{
       System.out.println("0~4を入力してください");
       }
     }
