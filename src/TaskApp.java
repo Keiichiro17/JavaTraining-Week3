@@ -1,10 +1,10 @@
 import java.util.Scanner;
-class LibraryApp{
-  public static void main(String[]args)
-  {
-    Scanner sc=new
-      Scanner(System.in);
-    TaskManager taskmanager=new taskmanager();
+import java.time.LocalDate;
+
+class TaskApp{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    TaskManager taskmanager=new Taskmanager();
 
     while(true){
       System.out.println("タスク管理システム");
@@ -14,12 +14,22 @@ class LibraryApp{
       System.out.println("4:タスクを完了する");
       System.out.print("0:終了");
 
-      int choice=sc.nextInt();
-      sc.nextLine();
+      int choice;
+      try{
+        choice=Integer.parseInt(sc.nextLine());
+      }catch (NumberFormatException e){
+       System.out.println("もう一度入力してください");
+        continue;
+      }
+      
 
       if(choice==1){
+        String title;
+        while(true)
         System.out.print("タイトル: ");
-        String title=sc.nextLine();
+        title=sc.nextLine().trim();
+        if(!title.isEmpty()) break;
+ｍ        System.out.お      
 
         System.out.print("完了状態: ");
         String deadline=sc.nextLine();
